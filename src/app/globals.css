@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-from: #f5f5f7;
+  --bg-via: #eef0f4;
+  --bg-to: #e9ecf3;
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-border: rgba(255, 255, 255, 0.6);
+  --glow-a: rgba(120, 119, 198, 0.25);
+  --glow-b: rgba(90, 200, 250, 0.2);
+}
+
+.dark {
+  --bg-from: #0a0a0c;
+  --bg-via: #111114;
+  --bg-to: #0a0a0c;
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1a6;
+  --card-bg: rgba(28, 28, 32, 0.55);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --glow-a: rgba(120, 119, 198, 0.35);
+  --glow-b: rgba(90, 200, 250, 0.25);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: linear-gradient(160deg, var(--bg-from), var(--bg-via) 45%, var(--bg-to));
+  color: var(--text-primary);
+  min-height: 100dvh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.dark .glass-card {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
