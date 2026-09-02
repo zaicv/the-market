@@ -1,5 +1,5 @@
-import Image from "next/image";
 
+import Image from "next/image";
 type Product = {
   name: string;
   tagline: string;
@@ -12,12 +12,10 @@ type Product = {
   sizeMb: number | null;
   requirement: string;
 };
-
 export default function ProductCard({ product }: { product: Product }) {
   const { name, tagline, description, icon, accent, downloadUrl, releasesPageUrl, version, sizeMb, requirement } =
     product;
   const available = Boolean(downloadUrl);
-
   return (
     <div className="glass-card relative flex flex-col gap-5 overflow-hidden rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-1">
       <div
