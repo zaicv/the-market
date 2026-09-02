@@ -1,6 +1,7 @@
 import ThemeToggle from "@/components/ThemeToggle";
 import ProductCard from "@/components/ProductCard";
 import { getLatestRelease, getLatestPrefixedRelease } from "@/lib/releases";
+import Image from "next/image";
 
 export default async function Home() {
   const [phoebeos, celestia, noc] = await Promise.all([
@@ -46,7 +47,6 @@ export default async function Home() {
     <div className="relative min-h-dvh overflow-hidden">
       <div className="glow-blob h-96 w-96 opacity-40" style={{ top: "-6rem", left: "-6rem", background: "var(--glow-a)" }} />
       <div className="glow-blob h-96 w-96 opacity-30" style={{ top: "20%", right: "-8rem", background: "var(--glow-b)" }} />
-<Image src="/icon-market.png" alt="The Market" width={96} height={96} className="mx-auto mb-6" priority />
       <header className="relative z-10 mx-auto flex max-w-5xl items-center justify-between px-6 py-8">
         <span className="text-lg font-semibold tracking-tight">The Market</span>
         <ThemeToggle />
