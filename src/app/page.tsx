@@ -58,6 +58,7 @@ export default async function Home() {
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             Native macOS apps, built independently
           </div>
+          <Image src="/icon-market.png" alt="The Market" width={96} height={96} className="mx-auto mb-6" priority />
           <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">
             Everything I build,
             <br />
