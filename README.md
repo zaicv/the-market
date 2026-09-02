@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="public/icon-market.png" alt="The Market" width="96" height="96" />
+
 # The Market
 
 **Everything I build, in one place.**
