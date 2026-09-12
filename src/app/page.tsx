@@ -4,10 +4,11 @@ import { getLatestRelease, getLatestPrefixedRelease } from "@/lib/releases";
 import Image from "next/image";
 
 export default async function Home() {
-  const [phoebeos, celestia, noc] = await Promise.all([
+  const [phoebeos, celestia, noc, tesseract] = await Promise.all([
     getLatestRelease("zaicv/phoebeos-releases"),
     getLatestPrefixedRelease("zaicv/the-noc-releases", "celestia-v"),
     getLatestPrefixedRelease("zaicv/the-noc-releases", "v", "celestia-v"),
+    getLatestRelease("zaicv/tesseract-releases"),
   ]);
 
   const products = [
@@ -41,6 +42,16 @@ export default async function Home() {
       requirement: "macOS · Universal",
       ...noc,
     },
+    {
+      name: "Tesseract",
+      tagline: "The AIOS workspace client.",
+      description:
+        "Tesseract is a native client for your home server — run agents, review approvals, query databases, and find any file with a global ⌘⇧Space.",
+      icon: "/icons/tesseract.png",
+      accent: "radial-gradient(circle, var(--glow-b), transparent 70%)",
+      requirement: "macOS 26.2+",
+      ...tesseract,
+    },
   ];
 
   return (
@@ -69,7 +80,7 @@ export default async function Home() {
           </p>
         </section>
 
-        <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <section className="grid gap-6 sm:grid-cols-2">
           {products.map((p) => (
             <ProductCard key={p.name} product={p} />
           ))}

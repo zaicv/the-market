@@ -41,7 +41,7 @@ export default function ProductCard({ product }: { product: Product }) {
       <p className="text-secondary relative z-10 text-sm leading-relaxed">{description}</p>
       <div className="relative z-10 mt-auto flex flex-col gap-3">
         {available ? (
-          
+          <a
             href={downloadUrl!}
             className="flex items-center justify-center gap-2 rounded-2xl bg-[var(--text-primary)] px-5 py-3 text-[var(--bg-from)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
@@ -51,7 +51,7 @@ export default function ProductCard({ product }: { product: Product }) {
             <span className="font-medium whitespace-nowrap">Download for macOS</span>
           </a>
         ) : (
-          
+          <a
             href={releasesPageUrl}
             className="glass-card flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-medium transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
